@@ -66,7 +66,6 @@ class Movie(models.Model):
     url = models.SlugField(max_length=130, unique=True)
     draft = models.BooleanField('Draft', default=False)
 
-
     def __str__(self):
         return self.title
 
@@ -133,12 +132,3 @@ class Reviews(models.Model):
     class Meta:
         verbose_name = 'Review'
         verbose_name_plural = 'Reviews'
-
-
-
-
-
-
-
-
-
