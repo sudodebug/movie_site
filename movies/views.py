@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
 from .models import Movie
@@ -15,3 +15,10 @@ class MovieDetailView(DetailView):
     """Movie discription"""
     model = Movie
     slug_field = 'url'
+
+
+class AddReview(View):
+    """Add review"""
+    def post(self, request, pk):
+        print(request.POST)
+        return redirect('/')
