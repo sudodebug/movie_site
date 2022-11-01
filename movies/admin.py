@@ -31,15 +31,16 @@ class MovieAdmin(admin.ModelAdmin):
             "fields": ("description", "poster")
         }),
         (None, {
-            "fields": ("year", "world_premiere", "country")
+            "fields": (("year", "world_premiere", "country"),)
         }),
-        (None, {
+        ('Actors', {
+            "classes": ("collapse",),
             "fields": (("actors", "directors", "genres", "category"),)
         }),
         (None, {
             "fields": (("budget", "fees_in_usa", "fees_in_world"),)
         }),
-        (None, {
+        ("Options", {
             "fields": (("url", "draft"),)
         }),
     )
