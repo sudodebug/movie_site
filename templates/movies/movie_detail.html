@@ -1,4 +1,5 @@
 {% extends 'movies/base.html' %}
+{% load static %}
 {% block title %} {{ movie.title }} {% endblock title %}
 {% block container %}
     <div class="container py-md-3">
@@ -136,8 +137,7 @@
                             <!-- contact form grid -->
                             <div class="contact-single">
                                 <h3 class="editContent" style="outline: none; cursor: inherit;">
-                                    <span class="sub-tittle editContent"
-                                          style="outline: none; cursor: inherit;">02</span>Оставить
+                                    <span class="sub-tittle editContent">{{ movie.reviews_set.count }}</span>Оставить
                                     отзыв</h3>
                                 <form action="{% url 'add_review' movie.id %}" method="post" class="mt-4" id="formReview">
                                     {% csrf_token %}
@@ -175,7 +175,7 @@
                         </div>
                         {% for review in movie.reviews_set.all %}
                         <div class="media py-5">
-                            <img src="bundles/images/te2.jpg" class="mr-3 img-fluid" alt="image">
+                            <img src="{% static 'images/te2.jpg' %}" class="mr-3 img-fluid" alt="image">
                             <div class="media-body mt-4">
                                 <h5 class="mt-0 editContent">
                                     {{ review.name }}
