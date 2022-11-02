@@ -87,3 +87,6 @@ class MovieShotsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(RatingStar)
+
+admin.site.site_title = "Website about Movies"
+admin.site.site_header = "Website about Movies"
