@@ -24,10 +24,12 @@
 <div class="left-side">
     <h3 class="sear-head editContent" >Год</h3>
     <ul class="w3layouts-box-list">
-        <li class="editContent" >
+        {% for movie in view.get_years %}
+        <li class="editContent">
             <input type="checkbox" class="checked">
-            <span class="span editContent" >2020</span>
+            <span class="span editContent" >{{ movie.year }}</span>
         </li>
+        {% endfor %}
     </ul>
 </div>
 <!-- //discounts -->
